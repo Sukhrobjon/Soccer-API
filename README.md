@@ -10,3 +10,7 @@
 /leagues/:leagueId/teams/:teamsId/players
 /leagues/:leagueId/teams/:teamsId/players/:playersId
 ```
+
+## Documentation
+
+You can read the documentation [here](https://sukhrobjon.github.io/Soccer-API/)
