@@ -44,14 +44,14 @@ module.exports = (app) => {
 
     
 
-    // app.get('/leagues/:leagueId', (req, res) => {
-    //     League.findById(req.params.id)
-    //         .then(leagues => {
-    //             res.json(leagues)
-    //         })
-    //         .catch(err => {
-    //             console.log(err);
-    //         })
-    // })
+    app.get('/leagues/:leagueId', (req, res) => {
+        League.findById(req.params.leagueId)
+            .then(league => {
+                res.json(league)
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    })
 
 }
