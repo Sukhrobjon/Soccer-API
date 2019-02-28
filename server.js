@@ -5,15 +5,30 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 
 
+// LINKING CONTROLLER
+const leagues = require("./controllers/leagues.controller")
 
-app.get('/', function (req, res) {
-    res.send('Soccer API');
-});
+
 
 
 // Set db
 const database = require('./data/soccer-db.js');
 
+// handlebars
+var exphbs = require('express-handlebars');
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
+// MIDDLE WARES
+app.use(methodOverride('_method'));
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+// CALLING ROUTES
+leagues(app)
+
+
 app.listen(port, function () {
     console.log('Example app listening on port 3000!');
 });
+module.exports = app;
