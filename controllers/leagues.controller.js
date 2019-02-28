@@ -14,15 +14,33 @@ module.exports = (app) => {
                 console.log(err);
             })
     })
-    // app.post("/leagues", (req, res) => {
-    //     League.create(req.body)
-    //         .then(leagues => {
-    //             req.send(leagues)
-    //             console.log(leagues)
-    //         }).catch(error => {
-    //             console.log(error.message);
-    //         });
-    // });
+
+    // NEW
+    app.get('/leagues/new', (req, res) => {
+        res.render('leagues-new', {});
+    })
+
+
+    // CREATE
+    app.post('/leagues', (req, res) => {
+        console.log(req.body)
+        League.create(req.body).then((leagues) => {
+            console.log(leagues);
+            // res.redirect(`/charities/${charity._id}`);
+            res.redirect("/")
+        }).catch((err) => {
+            console.log(err.message);
+        })
+    })
+    app.get("/leagues", (req, res) => {
+        League.find()
+            .then(leagues => {
+                res.json(leagues)
+                console.log(leagues)
+            }).catch(error => {
+                console.log(error.message);
+            });
+    });
 
     
 
@@ -35,4 +53,5 @@ module.exports = (app) => {
     //             console.log(err);
     //         })
     // })
+
 }

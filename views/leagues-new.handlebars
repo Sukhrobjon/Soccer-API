@@ -1,0 +1,14 @@
+<!-- views/charities-new.handlebars -->
+
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+        <legend>New League</legend>
+        <form method="POST" action="/leagues">
+            {{> leagues-form}}
+            <!-- BUTTON -->
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">Save League</button>
+            </div>
+        </form>
+    </div>
+</div>

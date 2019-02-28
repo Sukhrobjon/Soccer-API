@@ -8,7 +8,9 @@ const methodOverride = require('method-override');
 // LINKING CONTROLLER
 const leagues = require("./controllers/leagues.controller")
 
-
+// MIDDLE WARES
+app.use(methodOverride('_method'));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 // Set db
@@ -19,9 +21,7 @@ var exphbs = require('express-handlebars');
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-// MIDDLE WARES
-app.use(methodOverride('_method'));
-app.use(bodyParser.urlencoded({ extended: true }));
+
 
 
 // CALLING ROUTES
