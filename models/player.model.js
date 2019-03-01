@@ -5,11 +5,12 @@ const Populate = require("../utils/autopopulate");
 
 const PlayerSchema = new Schema({
     
-    firstName: { type: String, required: true },
-    lastName: { type: String, required: true },
+    name: { type: String, required: true },
+    age: { type: Number, required: true },
     height: { type: String, required: true },
-    teamId : { type: Schema.Types.ObjectId, ref: "Team", required: true },
-
+    nationality: { type: String, required: true },
+    team: { type: Schema.Types.ObjectId, ref: "Team", required: true },
+    league: { type: Schema.Types.ObjectId, ref: "League", required: true }
 });
 
 module.exports = mongoose.model("Player", LeagueSchema);
