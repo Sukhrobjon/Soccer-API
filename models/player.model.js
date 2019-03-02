@@ -9,7 +9,7 @@ const PlayerSchema = new Schema({
     age: { type: Number, required: true },
     nationality: { type: String, required: true },
     // height: { type: String, required: true },
-    teamId: { type: Schema.Types.ObjectId, ref: "Team", required: true },
+    teamId: { type: Schema.Types.ObjectId, ref: "Team", required: true }
     // leagueId: { type: Schema.Types.ObjectId, ref: "League", required: true }
 });
 

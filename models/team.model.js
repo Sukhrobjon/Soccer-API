@@ -10,9 +10,12 @@ const TeamSchema = new Schema({
     stadium: { type: String, required: true },
     location: { type: String, required: true },
     // players: [{ type: Schema.Types.ObjectId, required: true}],
-    leagueId : { type: Schema.Types.ObjectId, ref: "League" },
+    leagueId : { type: Schema.Types.ObjectId, ref: "League" }
 
 });
+
+
+
 
 module.exports = mongoose.model("Team", TeamSchema);
 
