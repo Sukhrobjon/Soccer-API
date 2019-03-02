@@ -9,8 +9,8 @@ const TeamSchema = new Schema({
     manager: { type: String, required: true },
     stadium: { type: String, required: true },
     location: { type: String, required: true },
-    // players: [{ type: Schema.Types.ObjectId, required: true}],
-    leagueId : { type: Schema.Types.ObjectId, ref: "League" }
+    players: [{ type: Schema.Types.ObjectId }],
+    leagueId : { type: Schema.Types.ObjectId, ref: "League", required: true }
 
 });
 

@@ -35,36 +35,9 @@ module.exports = app => {
             }
             
         })
-        // Team.create(req.body).then((team) => {
-        //     console.log(team);
-        //     res.redirect("/")
-        // }).catch((err) => {
-        //     console.log(err.message);
-        // })
+
     })
-    // app.post("/teams", function (req, res) {
-    //     const team = new Team(req.body);
-        
-    //     team
-    //         .save()
-    //         .then(team => {
-    //             return Promise.all([
-    //                 League.findById(req.params.leagueId)
-    //             ]);
-    //         })
-    //         .then( league => {
-    //             league.teams.push(team);
-    //             return Promise.all([
-    //                 league.save()
-    //             ]);
-    //         })
-    //         .then(league => {
-    //             // res.redirect(`/posts/${req.params.postId}`);
-    //         })
-    //         .catch(err => {
-    //             console.log(err);
-    //         });
-    // });
+ 
 
     // QUERY TEAMS IN A SPECIFIC LEAGUE
     app.get('/leagues/:leagueId/teams', (req, res) => {
@@ -74,7 +47,7 @@ module.exports = app => {
                 res.json(teams)
             })
             .catch(err => {
-                res.status(400).send(error);
+                res.status(400).send(err);
             })
     })
 
