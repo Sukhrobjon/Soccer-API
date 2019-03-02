@@ -7,6 +7,7 @@ const methodOverride = require('method-override');
 
 // LINKING CONTROLLER
 const leagues = require("./controllers/leagues.controller")
+const teams = require("./controllers/teams.controller")
 
 // MIDDLE WARES
 app.use(methodOverride('_method'));
@@ -26,6 +27,7 @@ app.set('view engine', 'handlebars');
 
 // CALLING ROUTES
 leagues(app)
+teams(app)
 
 
 app.listen(port, function () {

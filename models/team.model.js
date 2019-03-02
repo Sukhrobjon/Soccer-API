@@ -13,5 +13,5 @@ const TeamSchema = new Schema({
 
 });
 
-module.exports = mongoose.model("Team", LeagueSchema);
+module.exports = mongoose.model("Team", TeamSchema);
 
