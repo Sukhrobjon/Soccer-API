@@ -1,35 +1,28 @@
 const Team = require("../models/team.model")
+const League = require("../models/league.model")
 module.exports = app => {
-    // CREATE
-    app.post('/leagues/:leagueId/teams/:teamId', (req, res) => {
-        console.log(req.body)
-        League.create(req.body).then((leagues) => {
-            console.log(leagues);
-            // res.redirect(`/charities/${charity._id}`);
-            res.redirect("/")
-        }).catch((err) => {
-            console.log(err.message);
-        })
+    
+    // QUERY TEAMS IN A SPECIFIC LEAGUE
+    app.get('/leagues/:leagueId/teams', (req, res) => {
+        League.findById(req.params.leagueId).populate("teams")
+            .then(league => {
+                const teams = league.teams
+                res.json(teams)
+            })
+            .catch(err => {
+                res.status(400).send(error);
+            })
     })
-    app.get("/leagues", (req, res) => {
-        League.find()
-            .then(leagues => {
-                res.json(leagues)
-                console.log(leagues)
+
+    // QUERY SINGLE TEAM
+    app.get("/leagues/:leagueId/teams/:teamId", (req, res) => {
+        Team.findById(req.params.teamId)
+            .then(team => {
+                res.status(200).json(team)
+                console.log(team)
             }).catch(error => {
+                res.status(400).send(error)
                 console.log(error.message);
             });
     });
-
-
-
-    app.get('/leagues/:leagueId', (req, res) => {
-        League.findById(req.params.leagueId)
-            .then(league => {
-                res.json(league)
-            })
-            .catch(err => {
-                console.log(err);
-            })
-    })
 }

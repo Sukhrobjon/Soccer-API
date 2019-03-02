@@ -4,9 +4,9 @@ module.exports = (app) => {
 
     app.get('/', (req, res) => {
         League.find()
-            .then(leagues => {
+            .then(league => {
                 res.render("leagues-index", {
-                    leagues: leagues
+                    league: league
                 })
             console.log("Index")
             })
@@ -24,8 +24,8 @@ module.exports = (app) => {
     // CREATE
     app.post('/leagues', (req, res) => {
         console.log(req.body)
-        League.create(req.body).then((leagues) => {
-            console.log(leagues);
+        League.create(req.body).then((league) => {
+            console.log(league);
             // res.redirect(`/charities/${charity._id}`);
             res.redirect("/")
         }).catch((err) => {
@@ -34,9 +34,9 @@ module.exports = (app) => {
     })
     app.get("/leagues", (req, res) => {
         League.find()
-            .then(leagues => {
-                res.json(leagues)
-                console.log(leagues)
+            .then(league => {
+                res.json(league)
+                console.log(league)
             }).catch(error => {
                 console.log(error.message);
             });
