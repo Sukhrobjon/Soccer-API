@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 
 const LeagueSchema = new Schema({
     
-    name: { type: String, required: true },
+    name: { type: String, required: true, unique: true },
     country: { type: String, required: true },
     // numberOfTeams: { type: Number, required: true},
     teams: [{ type: Schema.Types.ObjectId, ref: "Team"}]

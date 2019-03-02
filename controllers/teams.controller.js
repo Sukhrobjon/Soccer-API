@@ -2,6 +2,70 @@ const Team = require("../models/team.model")
 const League = require("../models/league.model")
 module.exports = app => {
     
+    // CREATE
+    app.post('/teams', (req, res) => {
+        console.log(req.body)
+        League.findOne({name: req.body.leagueName}).then(league => {
+            if(league)  {
+                const team = new Team({
+                    name: req.body.name,
+                    manager: req.body.manager,
+                    location: req.body.location,
+                    stadium: req.body.stadium,
+                    leagueId: league._id
+                })
+                team.save((error, team) => {
+                    if(error){
+                        console.log("team saving")
+                        res.send(error.message)
+                    } else {
+                        console.log(league, team)
+                        // league.teams.push(team._id)
+                        League.findOneAndUpdate({_id: league._id}, {$push: { teams: team._id }})
+                        .then((league) => {
+                            res.send(team)
+                        })
+                    }    
+                    
+                })
+
+            } else {
+            
+                res.send("Invalid league name")
+            }
+            
+        })
+        // Team.create(req.body).then((team) => {
+        //     console.log(team);
+        //     res.redirect("/")
+        // }).catch((err) => {
+        //     console.log(err.message);
+        // })
+    })
+    // app.post("/teams", function (req, res) {
+    //     const team = new Team(req.body);
+        
+    //     team
+    //         .save()
+    //         .then(team => {
+    //             return Promise.all([
+    //                 League.findById(req.params.leagueId)
+    //             ]);
+    //         })
+    //         .then( league => {
+    //             league.teams.push(team);
+    //             return Promise.all([
+    //                 league.save()
+    //             ]);
+    //         })
+    //         .then(league => {
+    //             // res.redirect(`/posts/${req.params.postId}`);
+    //         })
+    //         .catch(err => {
+    //             console.log(err);
+    //         });
+    // });
+
     // QUERY TEAMS IN A SPECIFIC LEAGUE
     app.get('/leagues/:leagueId/teams', (req, res) => {
         League.findById(req.params.leagueId).populate("teams")

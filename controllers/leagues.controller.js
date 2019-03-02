@@ -26,10 +26,12 @@ module.exports = (app) => {
         console.log(req.body)
         League.create(req.body).then((league) => {
             console.log(league);
-            // res.redirect(`/charities/${charity._id}`);
-            res.redirect("/")
+            // res.redirect("/")
+            res.send(league)
         }).catch((err) => {
+
             console.log(err.message);
+            res.send(err.message)
         })
     })
     app.get("/leagues", (req, res) => {
