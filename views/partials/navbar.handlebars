@@ -22,9 +22,21 @@
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form> --}}
-        <div class="pull-right">
-            <a href="/leagues/new" class="btn btn-primary navbar-btn">Add League</a>
-        </div>
+    
+        <form class="form-inline my-2 my-lg-0">
+            {{!-- {{#if currentUser}} --}}
+                <input class="btn btn-outline-primary my-2 my-sm-0 mr-sm-2" type="button" value="Logout"
+                    onclick="window.location.href='/logout'" />
+                {{!-- {{else}} --}}
+                <input class="btn btn-outline-primary my-2 my-sm-0 mr-sm-2" type="button" value="Login"
+                    onclick="window.location.href='/login'" />
+                <input class="btn btn-outline-primary my-2 my-sm-0" type="button" value="Register"
+                    onclick="window.location.href='/sign-up'" />
+            {{!-- {{/if}} --}}
+            {{!-- <div class="pull-right"> --}}
+                <a href="/leagues/new" class="btn btn-primary navbar-btn">Add League</a>
+            {{!-- </div> --}}
+        </form>
     </div>
 </nav>
 

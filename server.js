@@ -9,6 +9,7 @@ const methodOverride = require('method-override');
 const leagues = require("./controllers/leagues.controller")
 const teams = require("./controllers/teams.controller")
 const players = require("./controllers/players.controller")
+const auth = require("./controllers/auth.controller")
 
 // MIDDLE WARES
 app.use(methodOverride('_method'));
@@ -30,6 +31,7 @@ app.set('view engine', 'handlebars');
 leagues(app)
 teams(app)
 players(app)
+auth(app)
 
 
 app.listen(port, function () {
