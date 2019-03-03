@@ -1,3 +1,6 @@
+const dotenv = require('dotenv').config();
+var cookieParser = require('cookie-parser');
+const jwt = require('jsonwebtoken');
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000
@@ -14,7 +17,7 @@ const auth = require("./controllers/auth.controller")
 // MIDDLE WARES
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(cookieParser());
 
 // Set db
 const database = require('./data/soccer-db.js');
