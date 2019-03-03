@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 assert = require("assert");
 
-const url = "mongodb://localhost/soccer-db";
+const url = process.env.MONGODB_URI || "mongodb://localhost/soccer-db";
 mongoose.Promise = global.Promise;
 
 mongoose.connect(url, { useNewUrlParser: true },
