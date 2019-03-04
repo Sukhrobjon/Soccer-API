@@ -1,5 +1,7 @@
 const Team = require("../models/team.model")
 const League = require("../models/league.model")
+
+
 module.exports = app => {
     
     // CREATE
@@ -40,7 +42,7 @@ module.exports = app => {
  
 
     // QUERY TEAMS IN A SPECIFIC LEAGUE
-    app.get('/leagues/:leagueId/teams', (req, res) => {
+    app.get('/api/leagues/:leagueId/teams', (req, res) => {
         League.findById(req.params.leagueId).populate("teams")
             .then(league => {
                 const teams = league.teams
@@ -52,7 +54,7 @@ module.exports = app => {
     })
 
     // QUERY SINGLE TEAM
-    app.get("/leagues/:leagueId/teams/:teamId", (req, res) => {
+    app.get("/api/leagues/:leagueId/teams/:teamId", (req, res) => {
         Team.findById(req.params.teamId)
             .then(team => {
                 res.status(200).json(team)

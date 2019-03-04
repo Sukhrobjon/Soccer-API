@@ -46,7 +46,7 @@ module.exports = app => {
 
 
     // QUERY players from A SPECIFIC team
-    app.get('/leagues/:leagueId/teams/:teamId/players', (req, res) => {
+    app.get('/api/leagues/:leagueId/teams/:teamId/players', (req, res) => {
         Team.findById(req.params.teamId).populate("players")
             .then(team => {
                 // console.log(team)
@@ -59,7 +59,7 @@ module.exports = app => {
     })
 
     // QUERY SINGLE TEAM
-    app.get("/leagues/:leagueId/teams/:teamId/players/:playerId", (req, res) => {
+    app.get("/api/leagues/:leagueId/teams/:teamId/players/:playerId", (req, res) => {
         Player.findById(req.params.playerId)
             .then(player => {
                 console.log("player: " + player)
