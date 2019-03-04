@@ -6,7 +6,6 @@ module.exports = (app) => {
 
     app.get('/', (req, res) => {
         var currentUser = req.user;
-        // console.log(req.cookies);
         League.find()
             .then(league => {
                 res.render("leagues-index", {
@@ -29,22 +28,27 @@ module.exports = (app) => {
     });
     // NEW
     app.get('/leagues/new', (req, res) => {
+        var currentUser = req.user;
         res.render('leagues-new', { currentUser });
     })
 
 
     // CREATE
     app.post('/leagues', (req, res) => {
-        console.log(req.body)
-        League.create(req.body).then((league) => {
-            console.log(league);
-            res.redirect("/")
-            res.send(league)
-        }).catch((err) => {
+        if (req.user && req.user.username == "Sukhrobjon"){
+            console.log(req.body)
+            League.create(req.body).then((league) => {
+                console.log(league);
+                res.redirect("/")
+                res.send(league)
+            }).catch((err) => {
 
-            console.log(err.message);
-            res.send(err.message)
-        })
+                console.log(err.message);
+                res.send(err.message)
+            })
+        } else {
+            res.redirect('/')
+        }
     });
 
 
