@@ -9,7 +9,7 @@ module.exports = (app) => {
         League.find()
             .then(league => {
                 res.render("leagues-index", {
-                    league: league
+                    league, currentUser
                 })
             })
             .catch(err => {
