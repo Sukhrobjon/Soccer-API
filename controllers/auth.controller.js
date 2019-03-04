@@ -20,7 +20,7 @@ module.exports = app => {
         })
         .catch(err => {
             console.log(err.message);
-                return res.status(400).send({ err: err });
+                return res.status(400).send({ err: err.message });
         });
     });
 
