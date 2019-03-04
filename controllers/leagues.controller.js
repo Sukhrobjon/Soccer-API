@@ -1,14 +1,16 @@
 const League = require('../models/league.model.js');
+const User = require("../models/user.model")
 
 module.exports = (app) => {
 
     app.get('/', (req, res) => {
+        var currentUser = req.user;
+        // console.log(req.cookies);
         League.find()
             .then(league => {
                 res.render("leagues-index", {
                     league: league
                 })
-            console.log("Index")
             })
             .catch(err => {
                 console.log(err);
@@ -33,7 +35,9 @@ module.exports = (app) => {
             console.log(err.message);
             res.send(err.message)
         })
-    })
+    });
+
+
     app.get("/leagues", (req, res) => {
         League.find()
             .then(league => {
