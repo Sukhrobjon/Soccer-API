@@ -17,6 +17,15 @@ module.exports = (app) => {
             })
     })
 
+    app.get("/about", (req, res) => {
+        var currentUser = req.user;
+        res.render("about", { currentUser });
+    });
+
+    app.get("/documentation", (req, res) => {
+        var currentUser = req.user;
+        res.render("documentation", { currentUser });
+    });
     // NEW
     app.get('/leagues/new', (req, res) => {
         res.render('leagues-new', {});
