@@ -3,7 +3,7 @@
 ### Available Endpoints
 ### Base URL: https://football-api-sg.herokuapp.com/api
 
-|       Method          |      Endpoint        |      Return Object                         
+|       Method        |      Resources     |      Return Object                         
 | -------------       |:--------------------:| ------------------------------------------
 | GET                 | /leagues                       |Get all leagues         
 | GET                 | /leagues/:leagueId             |Get Specific league   
