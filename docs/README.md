@@ -1,7 +1,7 @@
 # Soccer API
 
 ### Available Endpoints
-### Base URL: https://football-api-sg.herokuapp.com/api
+### Base URL: https://soccer-api-sg.herokuapp.com/api
 
 |       Method        |      Resources     |      Return Object                         
 | -------------       |--------------------| ------------------------------------------
@@ -14,26 +14,26 @@
 
 
 ## What it is
-The Soccer API is a RESTful API that stores all available soccer leagues, teams and players. I am still working on creating the database that can host all data. For the sake of testing I have added some data. By creating an account you will have an access to create a league only, and it should be unique. I am still working on how to verify the input from users. Check out the live deployment [here](https://football-api-sg.herokuapp.com/).
+The Soccer API is a RESTful API that stores all available soccer leagues, teams and players. I am still working on creating the database that can host all data. For the sake of testing I have added some data. By creating an account you will have an access to create a league only, and it should be unique. I am still working on how to verify the input from users. Check out the live deployment [here](https://soccer-api-sg.herokuapp.com/).
 
 ## Introduction
 This documentation will help you get familiar with the resources of the Soccer API and show you how to make queries to get leagues, teams and players within a nested endpoints.
 
 ### Rest
-Base url: https://football-api-sg.herokuapp.com/api
+Base url: https://soccer-api-sg.herokuapp.com/api
 
 The base url contains information about all available API's resources. All responses will return data in `json`.
 
 **Sample Request**
 ```
-https://football-api-sg.herokuapp.com/api
+https://soccer-api-sg.herokuapp.com/api
 ```
 **Sample Response**
 ```
 {
-    "leagues": "football-api-sg.herokuapp.com/api/leagues",
-    "teams": "football-api-sg.herokuapp.com/api/teams",
-    "players": "football-api-sg.herokuapp.com/api/players"
+    "leagues": "soccer-api-sg.herokuapp.com/api/leagues",
+    "teams": "soccer-api-sg.herokuapp.com/api/teams",
+    "players": "soccer-api-sg.herokuapp.com/api/players"
 }
 ```
 
@@ -59,7 +59,7 @@ You can access the list of leagues by using the /leagues endpoint.
 
 **Sample Request**
 ```
-https://football-api-sg.herokuapp.com/api/leagues
+https://soccer-api-sg.herokuapp.com/api/leagues
 ```
 **Sample Response**
 ```
@@ -90,7 +90,7 @@ You can get a single league by adding its ```id``` as a parameter: ```/leagues/*
 
 **Sample Request**
 ```
-https://football-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23
+https://soccer-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23
 ```
 **Sample Response**
 ```
@@ -122,7 +122,7 @@ Working on adding more teams.
 ### Get All Teams
 You can access the list of all available teams ```/teams``` endpoint
 ```
-http://football-api-sg.herokuapp.com/api/teams
+http://soccer-api-sg.herokuapp.com/api/teams
 ```
 
 ### Get All Teams From Specific League
@@ -130,7 +130,7 @@ You can query the all teams in a specific league use ```/leagues/*<leagueId>*/te
 
 **Sample Request**
 ```
-https://football-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23/teams
+https://soccer-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23/teams
 ```
 
 **Sample Response**
@@ -156,7 +156,7 @@ You can get single team by adding the id of the team: ```/leagues/*<leagueId>*/t
 
 **Sample Request**
 ```
-https://football-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23/teams/5c7db6eb6187930004aa6ba7
+https://soccer-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23/teams/5c7db6eb6187930004aa6ba7
 ```
 
 **Sample Response**
@@ -190,7 +190,7 @@ Working on adding more players to database.
 ### Get All Player stored in the database 
 You can access the list of all available players ```/players``` endpoint
 ```
-http://football-api-sg.herokuapp.com/api/players
+http://soccer-api-sg.herokuapp.com/api/players
 ```
 
 ### Get All Players From Specific Team
@@ -198,7 +198,7 @@ You can query the all players in a specific team use: ```/leagues/*<leagueId>*/t
 
 **Sample Request**
 ```
-https://football-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23/teams/5c7db6eb6187930004aa6ba7/players
+https://soccer-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23/teams/5c7db6eb6187930004aa6ba7/players
 ```
 
 **Sample Response**
@@ -217,7 +217,7 @@ You can get single player by adding the id of the player: ```/leagues/*<leagueId
 
 **Sample Request**
 ```
-https://football-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23/teams/5c7db6eb6187930004aa6ba7/players/5c7dda5a40a3b30004360723
+https://soccer-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23/teams/5c7db6eb6187930004aa6ba7/players/5c7dda5a40a3b30004360723
 ```
 
 **Sample Response**

@@ -4,7 +4,7 @@ Soccer API developed during backend class @makeschool as a **Custom API Project*
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Or you can interact with live version [here](https://football-api-sg.herokuapp.com/) and documentaion [here](https://sukhrobjon.github.io/Soccer-API/)
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Or you can interact with live version [here](https://soccer-api-sg.herokuapp.com/) and documentaion [here](https://sukhrobjon.github.io/Soccer-API/)
 
 ### Installing
 
@@ -27,7 +27,7 @@ SECRET = ???
 ```
 
 ## What It is
-The Soccer API is a RESTful API that stores all available soccer leagues, teams and players. I am still working on creating the database that can host all data. For the sake of testing I have added some data. The project is fully authenticated, you can create an account. In the future user can create their own fantazy team, right now I am working on how to verify user input. Check out the live deployment [here](https://football-api-sg.herokuapp.com/). 
+The Soccer API is a RESTful API that stores all available soccer leagues, teams and players. I am still working on creating the database that can host all data. For the sake of testing I have added some data. The project is fully authenticated, you can create an account. In the future user can create their own fantazy team, right now I am working on how to verify user input. Check out the live deployment [here](https://soccer-api-sg.herokuapp.com/). 
 
 
 ## How to use it
