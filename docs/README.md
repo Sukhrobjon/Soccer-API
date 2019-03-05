@@ -13,9 +13,6 @@
 | GET                 | /leagues/:leagueId/teams/:teamId/players/:playerId|Get a specific player data
 
 
-# Soccer API
-
-
 ## What it is
 The Soccer API is a RESTful API that stores all available soccer leagues, teams and players. I am still working on creating the database that can host all data. For the sake of testing I have added some data. By creating an account you will have an access to create a league only, and it should be unique. I am still working on how to verify the input from users. Check out the live deployment [here](https://football-api-sg.herokuapp.com/).
 
@@ -177,3 +174,62 @@ https://football-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23/teams
     "leagueId": "5c7b5c08c2292b0004d34f23",
     "__v": 0
 }
+```
+## Players
+Working on adding more players to database.
+
+### Player schema
+|Key|Type|Description|
+|---|---|---|
+|name|string|The full name of the player.
+|age|string|The current age of the player.
+|nation|string|The current country player has citizenship
+|teamId|team schema object|Team id player belongs to
+
+### Get All Player stored in the database 
+You can access the list of all available players ```/api/players``` endpoint
+```
+http://football-api-sg.herokuapp.com/api/players
+```
+
+### Get All Players From Specific Team
+You can query the all players in a specific team use ```/api/leagues/leagueId/teams/teamId/players```
+
+*Sample Requst*
+```
+https://football-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23/teams/5c7db6eb6187930004aa6ba7/players
+```
+
+*Example*
+```json
+{
+    "_id": "5c7dda5a40a3b30004360723",
+    "name": "Mohamed Salah",
+    "age": 30,
+    "nation": "Egypt",
+    "teamId": "5c7db6eb6187930004aa6ba7",
+    "__v": 0
+}
+```
+### Get Single Player from a specific team
+You can get single player by adding the id of the player: ```/api/leagues/leagueId/teams/teamId/players/playerId```
+
+*Sample Requst*
+```
+https://football-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23/teams/5c7db6eb6187930004aa6ba7/players/5c7dda5a40a3b30004360723
+```
+
+*Example*
+```json
+{
+    "_id": "5c7dda5a40a3b30004360723",
+    "name": "Mohamed Salah",
+    "age": 30,
+    "nation": "Egypt",
+    "teamId": "5c7db6eb6187930004aa6ba7",
+    "__v": 0
+}
+```
+
+## *NOTE* 
+The project is under active development stay tuned for more advanced features. Thank you.
