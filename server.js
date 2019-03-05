@@ -14,7 +14,7 @@ const leagues = require("./controllers/leagues.controller")
 const teams = require("./controllers/teams.controller")
 const players = require("./controllers/players.controller")
 const auth = require("./controllers/auth.controller")
-
+const api = require("./controllers/api.controller")
 
 // Set db
 const database = require('./data/soccer-db.js');
@@ -58,6 +58,7 @@ leagues(app)
 teams(app)
 players(app)
 auth(app)
+api(app)
 
 
 app.listen(port, function () {

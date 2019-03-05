@@ -43,7 +43,16 @@ module.exports = app => {
         })
 
     })
-
+    
+    // Get all player in entire database
+    app.get("/api/players", (req, res) => {
+        Player.find()
+            .then(player => {
+                res.json(player)
+            }).catch(error => {
+                console.log(error.message);
+            });
+    });
 
     // QUERY players from A SPECIFIC team
     app.get('/api/leagues/:leagueId/teams/:teamId/players', (req, res) => {

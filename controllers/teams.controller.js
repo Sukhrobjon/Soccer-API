@@ -40,6 +40,16 @@ module.exports = app => {
 
     })
  
+    // QUERY ALL LEAGUES AVAILABLE
+    app.get("/api/teams", (req, res) => {
+        Team.find()
+            .then(team => {
+                res.json(team)
+                // console.log(team)
+            }).catch(error => {
+                console.log(error.message);
+            });
+    });
 
     // QUERY TEAMS IN A SPECIFIC LEAGUE
     app.get('/api/leagues/:leagueId/teams', (req, res) => {
