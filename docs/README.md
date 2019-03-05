@@ -55,7 +55,7 @@ Currently I have added the raw data myself in the future I will scrape the real 
 |teams|list of teams(schema object)|All the teams the league consists of.
 
 ### Get All Leagues
-You can access the list of leagues by using the /leagues endpoint.
+You can access the list of leagues by using the ```/leagues``` endpoint.
 
 **Sample Request**
 ```
@@ -86,7 +86,7 @@ https://soccer-api-sg.herokuapp.com/api/leagues
 ```
 
 ### Get a single league
-You can get a single league by adding its ```id``` as a parameter: ```/leagues/*<leagueId>*```
+You can get a single league by adding its ```id``` as a parameter: ```/leagues/leagueId```
 
 **Sample Request**
 ```
@@ -126,7 +126,7 @@ http://soccer-api-sg.herokuapp.com/api/teams
 ```
 
 ### Get All Teams From Specific League
-You can query the all teams in a specific league use ```/leagues/*<leagueId>*/teams```
+You can query the all teams in a specific league use ```/leagues/leagueId/teams```
 
 **Sample Request**
 ```
@@ -152,7 +152,7 @@ https://soccer-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23/teams
 
 ```
 ### Get Single Team
-You can get single team by adding the id of the team: ```/leagues/*<leagueId>*/teams/*<teamId>*```
+You can get single team by adding the id of the team: ```/leagues/leagueId/teams/teamId```
 
 **Sample Request**
 ```
@@ -194,7 +194,7 @@ http://soccer-api-sg.herokuapp.com/api/players
 ```
 
 ### Get All Players From Specific Team
-You can query the all players in a specific team use: ```/leagues/*<leagueId>*/teams/*<teamId>*/players```
+You can query the all players in a specific team use: ```/leagues/leagueId/teams/teamId/players```
 
 **Sample Request**
 ```
@@ -213,7 +213,7 @@ https://soccer-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23/teams/5
 }
 ```
 ### Get Single Player from a specific team
-You can get single player by adding the id of the player: ```/leagues/*<leagueId>*/teams/*<teamId>*/players/*<playerId>*```
+You can get single player by adding the id of the player: ```/leagues/leagueId/teams/teamId/players/playerId```
 
 **Sample Request**
 ```
