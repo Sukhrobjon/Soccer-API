@@ -1,7 +1,7 @@
 # Soccer API
 
 ### Available Endpoints
-### Base URL : https://football-api-sg.herokuapp.com/api
+### Base URL : ```https://football-api-sg.herokuapp.com/api```
 
 |       Method          |      Endpoint        |      Return Object                         
 | -------------       |:--------------------:| ------------------------------------------
