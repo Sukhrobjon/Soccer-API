@@ -4,11 +4,12 @@ const User = require("../models/user.model")
 
 module.exports = (app) => {
 
+    // Index route
     app.get('/', (req, res) => {
         var currentUser = req.user;
         League.find()
             .then(league => {
-                res.render("leagues-index", {
+                res.render("about", {
                     league, currentUser
                 })
             })

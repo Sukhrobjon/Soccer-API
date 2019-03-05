@@ -4,7 +4,7 @@ Soccer API developed during backend class @makeschool as a **Custom API Project*
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Or you can interact with live version [here](https://football-api-sg.herokuapp.com/) and documentaion [here](https://sukhrobjon.github.io/Soccer-API/)
 
 ### Installing
 
