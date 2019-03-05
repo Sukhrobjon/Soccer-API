@@ -1,6 +1,6 @@
 # Soccer API
 
-Soccer API developed during backend class @makeschool for custom api project
+Soccer API developed during backend class @makeschool as a **Custom API Project**
 
 ## Getting Started
 
@@ -25,26 +25,15 @@ Add secret key to .env
 ```
 SECRET = ???
 ```
-## Available Endpoints
-#### Base URL : ```https://football-api-sg.herokuapp.com/api```
-
-
-|       Method          |      Endpoint        |      Return Object                         
-| -------------       |:--------------------:| ------------------------------------------
-| GET                 | /leagues                       |Get all leagues         
-| GET                 | /leagues/:leagueId             |Get Specific league   
-| GET                 | /leagues/:leagueId/teams       |Get all teams in a specific league
-| GET                 | /leagues/:leagueId/teams/:teamId|Get a specific team data    
-| GET                 | /leagues/:leagueId/teams/:teamId/players|Get all players in a specific team 
-| GET                 | /leagues/:leagueId/teams/:teamId/players/:playerId|Get a specific player data
-
 
 ## What It is
-The Soccer API is a RESTful API that stores all available soccer leagues, teams and players. I am still working on creating the database that can host all data. For the sake of testing I have added some data. By creating an account you will have an access to create a league only, and it should be unique. I am still working on how to verify the input from users. Check out the live deployment [here](https://football-api-sg.herokuapp.com/). 
+The Soccer API is a RESTful API that stores all available soccer leagues, teams and players. I am still working on creating the database that can host all data. For the sake of testing I have added some data. The project is fully authenticated, you can create an account. In the future user can create their own fantazy team, right now I am working on how to verify user input. Check out the live deployment [here](https://football-api-sg.herokuapp.com/). 
 
-### How to use it
 
-You can find full documentation [here](https://sukhrobjon.github.io/Soccer-API/)
+## How to use it
+There are **three** nested resources: leagues, teams, and players. The resources are one to many relationship based.*For example:* There are multiple leagues, one leagues has many teams, one team has many players. You can read full documentation [here](https://sukhrobjon.github.io/Soccer-API/)
+
+
  
 ## Built With
 

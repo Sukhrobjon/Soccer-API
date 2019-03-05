@@ -4,13 +4,13 @@
 ### Base URL: https://football-api-sg.herokuapp.com/api
 
 |       Method        |      Resources     |      Return Object                         
-| -------------       |:--------------------:| ------------------------------------------
-| GET                 | /leagues                       |Get all leagues         
-| GET                 | /leagues/:leagueId             |Get Specific league   
-| GET                 | /leagues/:leagueId/teams       |Get all teams in a specific league
-| GET                 | /leagues/:leagueId/teams/:teamId|Get a specific team data    
-| GET                 | /leagues/:leagueId/teams/:teamId/players|Get all players in a specific team 
-| GET                 | /leagues/:leagueId/teams/:teamId/players/:playerId|Get a specific player data
+| -------------       |--------------------| ------------------------------------------
+| GET                 | /leagues                       | All leagues         
+| GET                 | /leagues/:leagueId             | Specific league   
+| GET                 | /leagues/:leagueId/teams       | All teams in a specific league
+| GET                 | /leagues/:leagueId/teams/:teamId| Specific team data    
+| GET                 | /leagues/:leagueId/teams/:teamId/players| All players in a specific team 
+| GET                 | /leagues/:leagueId/teams/:teamId/players/:playerId| Specific player data
 
 
 ## What it is
@@ -24,10 +24,11 @@ Base url: https://football-api-sg.herokuapp.com/api
 
 The base url contains information about all available API's resources. All responses will return data in `json`.
 
-*Sample Request*
+**Sample Request**
 ```
 https://football-api-sg.herokuapp.com/api
 ```
+**Sample Response**
 ```
 {
     "leagues": "football-api-sg.herokuapp.com/api/leagues",
@@ -54,13 +55,13 @@ Currently I have added the raw data myself in the future I will scrape the real 
 |teams|list of teams(schema object)|All the teams the league consists of.
 
 ### Get All Leagues
-You can access the list of leagues by using the /api/leagues endpoint.
+You can access the list of leagues by using the /leagues endpoint.
 
-*Sample Requst*
+**Sample Request**
 ```
 https://football-api-sg.herokuapp.com/api/leagues
 ```
-
+**Sample Response**
 ```
 [
     {
@@ -85,13 +86,13 @@ https://football-api-sg.herokuapp.com/api/leagues
 ```
 
 ### Get a single league
-You can get a single league by adding its ```id``` as a parameter: 
+You can get a single league by adding its ```id``` as a parameter: ```/leagues/*<leagueId>*```
 
-*Sample Requst*
+**Sample Request**
 ```
 https://football-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23
 ```
-
+**Sample Response**
 ```
 {
     "teams": [
@@ -119,20 +120,20 @@ Working on adding more teams.
 |leagueId|league schema obeject|The league Id the team belongs to
 
 ### Get All Teams
-You can access the list of all available teams ```/api/teams``` endpoint
+You can access the list of all available teams ```/teams``` endpoint
 ```
 http://football-api-sg.herokuapp.com/api/teams
 ```
 
 ### Get All Teams From Specific League
-You can query the all teams in a specific league use ```/api/leagues/leagueId/teams```
+You can query the all teams in a specific league use ```/leagues/*<leagueId>*/teams```
 
-*Sample Requst*
+**Sample Request**
 ```
 https://football-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23/teams
 ```
 
-*Example*
+**Sample Response**
 ```
 {
     "players": [
@@ -151,14 +152,14 @@ https://football-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23/teams
 
 ```
 ### Get Single Team
-You can get single team by adding the id of the team: ```/api/leagues/leagueId/teams/teamId```
+You can get single team by adding the id of the team: ```/leagues/*<leagueId>*/teams/*<teamId>*```
 
-*Sample Requst*
+**Sample Request**
 ```
 https://football-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23/teams/5c7db6eb6187930004aa6ba7
 ```
 
-*Example*
+**Sample Response**
 ```
 {
     "players": [
@@ -187,20 +188,20 @@ Working on adding more players to database.
 |teamId|team schema object|Team id player belongs to
 
 ### Get All Player stored in the database 
-You can access the list of all available players ```/api/players``` endpoint
+You can access the list of all available players ```/players``` endpoint
 ```
 http://football-api-sg.herokuapp.com/api/players
 ```
 
 ### Get All Players From Specific Team
-You can query the all players in a specific team use ```/api/leagues/leagueId/teams/teamId/players```
+You can query the all players in a specific team use: ```/leagues/*<leagueId>*/teams/*<teamId>*/players```
 
-*Sample Requst*
+**Sample Request**
 ```
 https://football-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23/teams/5c7db6eb6187930004aa6ba7/players
 ```
 
-*Example*
+**Sample Response**
 ```
 {
     "_id": "5c7dda5a40a3b30004360723",
@@ -212,14 +213,14 @@ https://football-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23/teams
 }
 ```
 ### Get Single Player from a specific team
-You can get single player by adding the id of the player: ```/api/leagues/leagueId/teams/teamId/players/playerId```
+You can get single player by adding the id of the player: ```/leagues/*<leagueId>*/teams/*<teamId>*/players/*<playerId>*```
 
-*Sample Requst*
+**Sample Request**
 ```
 https://football-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23/teams/5c7db6eb6187930004aa6ba7/players/5c7dda5a40a3b30004360723
 ```
 
-*Example*
+**Sample Response**
 ```
 {
     "_id": "5c7dda5a40a3b30004360723",
