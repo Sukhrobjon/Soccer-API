@@ -1,15 +1,17 @@
 # Soccer API
 
 ### Available Endpoints
-```javascript
-/leagues
-/leagues/:leagueId
-/leagues/:leagueId/teams
-/leagues/:leagueId/teams/:teamsId
-/leagues/:leagueId/teams/:teamsId/matches
-/leagues/:leagueId/teams/:teamsId/players
-/leagues/:leagueId/teams/:teamsId/players/:playersId
-```
+### Base URL : https://football-api-sg.herokuapp.com/api
+
+|       Method          |      Endpoint        |      Return Object                         
+| -------------       |:--------------------:| ------------------------------------------:
+| GET                 | /leagues                       |Get all leagues         
+| GET                 | /leagues/:leagueId             |Get Specific league   
+| GET                 | /leagues/:leagueId/teams       |Get all teams in a specific league
+| GET                 | /leagues/:leagueId/teams/:teamId|Get a specific team data    
+| GET                 | /leagues/:leagueId/teams/:teamId/players|Get all players in a specific team 
+| GET                 | /leagues/:leagueId/teams/:teamId/players/:playerId|Get a specific player data
+
 
 # Soccer API
 
@@ -86,7 +88,7 @@ https://football-api-sg.herokuapp.com/api/leagues
 ```
 
 ### Get a single league
-You can get a single league by its ```id``` as a parameter: 
+You can get a single league by adding its ```id``` as a parameter: 
 
 *Sample Requst*
 ```
@@ -106,3 +108,17 @@ https://football-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23
     "__v": 0
 }
 ```
+## Teams
+Working on adding more teams.
+
+### Team schema
+|Key|Type|Description|
+|---|---|---|
+|name|string|The name of the team.
+|manager|string|The current manager of the team.
+|stadium|string|The stadium of the team.
+|location|string|The city team is located
+|players|list of players schema object|The Ids of all players of the team
+|leagueId|league schema obeject|The league Id the team belongs to
+
+
