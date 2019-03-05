@@ -4,7 +4,7 @@
 ### Base URL : https://football-api-sg.herokuapp.com/api
 
 |       Method          |      Endpoint        |      Return Object                         
-| -------------       |:--------------------:| ------------------------------------------:
+| -------------       |:--------------------:| ------------------------------------------
 | GET                 | /leagues                       |Get all leagues         
 | GET                 | /leagues/:leagueId             |Get Specific league   
 | GET                 | /leagues/:leagueId/teams       |Get all teams in a specific league
@@ -54,7 +54,7 @@ Currently I have added the raw data myself in the future I will scrape the real 
 |---|---|---|
 |name|string|The name of the league.
 |country|string|The country it belongs to.
-|teams|list|All the teams the league consists of.
+|teams|list of teams(schema object)|All the teams the league consists of.
 
 ### Get All Leagues
 You can access the list of leagues by using the /api/leagues endpoint.
@@ -118,7 +118,62 @@ Working on adding more teams.
 |manager|string|The current manager of the team.
 |stadium|string|The stadium of the team.
 |location|string|The city team is located
-|players|list of players schema object|The Ids of all players of the team
+|players|list of players(schema object)|The Ids of all players of the team
 |leagueId|league schema obeject|The league Id the team belongs to
 
+### Get All Teams
+You can access the list of all available teams ```/api/teams``` endpoint
+```
+http://football-api-sg.herokuapp.com/api/teams
+```
 
+### Get All Teams From Specific League
+You can query the all teams in a specific league use ```/api/leagues/leagueId/teams```
+
+*Sample Requst*
+```
+https://football-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23/teams
+```
+
+*Example*
+```json
+{
+    "players": [
+        "5c7dda5a40a3b30004360723",
+        "5c7dda7840a3b30004360724",
+        "5c7dda9640a3b30004360725"
+    ],
+    "_id": "5c7db6eb6187930004aa6ba7",
+    "name": "Liverpool F.C",
+    "manager": "Jurgen Klopp",
+    "location": "Liverpool",
+    "stadium": "Anfield",
+    "leagueId": "5c7b5c08c2292b0004d34f23",
+    "__v": 0
+}
+
+```
+### Get Single Team
+You can get single team by adding the id of the team: ```/api/leagues/leagueId/teams/teamId```
+
+*Sample Requst*
+```
+https://football-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23/teams/5c7db6eb6187930004aa6ba7
+```
+
+*Example*
+```json
+{
+    "players": [
+        "5c7dda5a40a3b30004360723",
+        "5c7dda7840a3b30004360724",
+        "5c7dda9640a3b30004360725"
+    ],
+    "_id": "5c7db6eb6187930004aa6ba7",
+    "name": "Liverpool F.C",
+    "manager": "Jurgen Klopp",
+    "location": "Liverpool",
+    "stadium": "Anfield",
+    "leagueId": "5c7b5c08c2292b0004d34f23",
+    "__v": 0
+}
