@@ -1,7 +1,7 @@
 # Soccer API
 
 ### Available Endpoints
-### Base URL : ```https://football-api-sg.herokuapp.com/api```
+### Base URL: https://football-api-sg.herokuapp.com/api
 
 |       Method          |      Endpoint        |      Return Object                         
 | -------------       |:--------------------:| ------------------------------------------
@@ -28,7 +28,7 @@ The base url contains information about all available API's resources. All respo
 ```
 https://football-api-sg.herokuapp.com/api
 ```
-```JSON
+```
 {
     "leagues": "football-api-sg.herokuapp.com/api/leagues",
     "teams": "football-api-sg.herokuapp.com/api/teams",
@@ -61,7 +61,7 @@ You can access the list of leagues by using the /api/leagues endpoint.
 https://football-api-sg.herokuapp.com/api/leagues
 ```
 
-```json
+```
 [
     {
         "teams": [],
@@ -92,7 +92,7 @@ You can get a single league by adding its ```id``` as a parameter:
 https://football-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23
 ```
 
-```json
+```
 {
     "teams": [
         "5c7db2c06187930004aa6ba5",
@@ -133,7 +133,7 @@ https://football-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23/teams
 ```
 
 *Example*
-```json
+```
 {
     "players": [
         "5c7dda5a40a3b30004360723",
@@ -159,7 +159,7 @@ https://football-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23/teams
 ```
 
 *Example*
-```json
+```
 {
     "players": [
         "5c7dda5a40a3b30004360723",
@@ -201,7 +201,7 @@ https://football-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23/teams
 ```
 
 *Example*
-```json
+```
 {
     "_id": "5c7dda5a40a3b30004360723",
     "name": "Mohamed Salah",
@@ -220,7 +220,7 @@ https://football-api-sg.herokuapp.com/api/leagues/5c7b5c08c2292b0004d34f23/teams
 ```
 
 *Example*
-```json
+```
 {
     "_id": "5c7dda5a40a3b30004360723",
     "name": "Mohamed Salah",
