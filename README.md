@@ -48,8 +48,8 @@ You can find full documentation [here](https://sukhrobjon.github.io/Soccer-API/)
  
 ## Built With
 
-* [Node](https://nodejs.org/en/)
-* [Express](https://expressjs.com/)
+* [Node](https://nodejs.org/en/) - JavaScript run-time environment
+* [Express](https://expressjs.com/) - Web application framework
 * [Bootstrap](https://getbootstrap.com/) - Web framework
 * [Npm](https://www.npmjs.com/) - Dependency management
 * [Json Web Tokens](https://jwt.io/) - Encryption
