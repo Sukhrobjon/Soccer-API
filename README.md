@@ -51,7 +51,7 @@ There are **three** nested resources: leagues, teams, and players. The resources
 
 ## Authors
 
-* **Sukhrobjon Golibboev** - *Initial work* - [Sukrobjon](https://github.com/Sukhrobjon)
+* **Sukhrobjon Golibboev** - *Initial work* - [Sukhrobjon](https://github.com/Sukhrobjon)
 
 See also the list of [contributors](https://github.com/Sukhrobjon/Soccer-API/graphs/contributors) who participated in this project.
 
