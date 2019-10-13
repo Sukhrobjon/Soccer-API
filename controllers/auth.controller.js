@@ -1,6 +1,6 @@
 const User = require("../models/user.model");
 const jwt = require('jsonwebtoken');
-
+const { check, validationResult } = require('express-validator');
 
 module.exports = app => {
      app.get("/sign-up", (req, res) => {
@@ -8,7 +8,20 @@ module.exports = app => {
     });
 
     // SIGN UP POST
-    app.post("/sign-up", (req, res) => {
+    app.post("/sign-up", [
+        // username must be email
+        check('username').isEmail(),
+        check('password').isLength({min: 6}).withMessage('must be at least 5 chars long')
+                        .matches(/\d/).withMessage('must contain a number')
+        ], (req, res) => {
+        
+        // Finds the validation errors in this request and wraps them in an object with handy functions
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(422).json({
+                errors: errors.array()
+            });
+        }
         // Create User and JWT
         const user = new User(req.body);
 

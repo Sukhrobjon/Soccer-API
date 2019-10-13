@@ -5,6 +5,7 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000
 const expressValidator = require('express-validator')
+const { check, validationResult } = require('express-validator');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 
@@ -29,6 +30,7 @@ app.set('view engine', 'handlebars');
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(expressValidator())
 
 
 // Checking authentication if user is logged in
